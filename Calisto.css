@@ -1,10 +1,33 @@
 * {
-    background-color:#1E2749;
+    background-color:#111624  ;
+    box-sizing: border-box;
 }
 
-title-button{
-    all:unset;
+#bigBangButton {
+    all: unset;
     cursor: pointer;
-    display: inline-block;
-    outline: none;
+    
+    width: 134px;
+    height: 151px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-self: center;
+    animation: pulse 5s infinite ease-in-out;
+}
+
+  
+@keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+#CatIcon{
+    width: inherit;
+    height: inherit;
 }
