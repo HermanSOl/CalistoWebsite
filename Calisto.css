@@ -1,33 +1,34 @@
-* {
+html {
     background-color:#111624  ;
     box-sizing: border-box;
+}
+
+.sky {
+    width: 100%;
+    height: 100%;
 }
 
 #bigBangButton {
     all: unset;
     cursor: pointer;
-    
-    width: 134px;
-    height: 151px;
 
     position: absolute;
     top: 50%;
     left: 50%;
-    align-self: center;
     animation: pulse 5s infinite ease-in-out;
 }
 
+
   
 @keyframes pulse {
-    0%, 100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
+    0% {scale: 1;}
+    50%{scale: 1.15;}
+    100%{scale: 1;}
 }
 
-#CatIcon{
-    width: inherit;
-    height: inherit;
+
+#bigBangButton:hover {
+   width: 50px;
+   height: 100px;
 }
+
