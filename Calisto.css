@@ -16,10 +16,16 @@ html {
     top: 50%;
     left: 50%;
     animation: pulse 5s infinite ease-in-out;
+
+    & :hover {
+        scale: 1.05;
+    }
 }
 
 
-  
+
+
+
 @keyframes pulse {
     0% {scale: 1;}
     50%{scale: 1.15;}
@@ -27,8 +33,5 @@ html {
 }
 
 
-#bigBangButton:hover {
-   width: 50px;
-   height: 100px;
-}
+
 
