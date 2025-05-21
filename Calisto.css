@@ -43,6 +43,7 @@ html {
 }
 
 #startText {
+    display: none;
     left: 39%;
     top: 55%;
     position: absolute;
