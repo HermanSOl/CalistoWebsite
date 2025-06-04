@@ -10,3 +10,9 @@ After working in Figma this is what I came up with as the original screen:
 ![Starting Screen](image.png)
 
 Maybe I should add some sort of hymn when the page loads to add immersiveness. I also think I should make the stars hover a bit, which I don't think will be a big issue, as I will just give them one class.
+
+-----------------------------------------------------
+
+For the star Idea, after experimenting and trying out some things I have come to a satisfiable solution:
+To create a stary background, I will make a new function in JS that will generate multiple box-shadows at random positions and then apply that to my website. The idea for using box-shadows I got from the website CodePen from one of the posts. Its a great idea as we are not actually creating any new DOMS and hence will not be overloading the website, but just adding multiple styles onto one "< div >".
+I'll then add animations to make the the sky breathe.
