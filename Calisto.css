@@ -1,5 +1,5 @@
 html {
-    background-color: white;
+    background-color: #FCFCFC;
     height: 100%;
     /* background: radial-gradient(ellipse at bottom, #111624 0%, #F7717D 50%, #F5F5F5 100%); */
     overflow: hidden;
@@ -16,7 +16,7 @@ html {
     cursor: pointer;
     position: absolute;
     top: 51%;
-    left: 50%;
+    left: 52%;
     transform: translate(-45%, -45%);
     animation: pulse 5s infinite ease-in-out;
   }
@@ -26,7 +26,6 @@ html {
   }
   
   #CatIcon {
-    display: none;
     width: 100px;
     height: 100px;
   }

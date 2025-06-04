@@ -6,7 +6,7 @@ function giveStars(n) {
         const x = Math.floor(Math.random() * 2000);
         const y = Math.floor(Math.random() * 2000);
         shadows.push(`${x}px ${y}px black`);
-        shadows.push(`${x + 0.3}px ${y + 0.5}px #F7717D`);
+        shadows.push(`${x + 0.4}px ${y + 0.8}px #F7717D`);
     }
     return shadows.join(',');                // need to return with , between each due to css syntax
 }
