@@ -22,3 +22,7 @@ I realized in the process of making the desiarable animation for the stars that 
 
 So, now I'll try a new idea: taking advantage of the nature of my stars. Since all my stars are just box shadows of a single object, if I move that object then the stars will move as well. 
 
+
+## Redesign
+After some careful consideration, I realized that making the stars and animation (although can work out) will not be as visually appealing as I have thought. Instead of that, I'll stick with the original "Big Bang" idea. 
+I'll make the entrance screen light themed and on the press of the button I will make an animation that will spread from the center to the full screen using color-gradients.
