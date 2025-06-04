@@ -12,7 +12,13 @@ After working in Figma this is what I came up with as the original screen:
 Maybe I should add some sort of hymn when the page loads to add immersiveness. I also think I should make the stars hover a bit, which I don't think will be a big issue, as I will just give them one class.
 
 -----------------------------------------------------
+## Star Background and Animation
 
 For the star Idea, after experimenting and trying out some things I have come to a satisfiable solution:
 To create a stary background, I will make a new function in JS that will generate multiple box-shadows at random positions and then apply that to my website. The idea for using box-shadows I got from the website CodePen from one of the posts. Its a great idea as we are not actually creating any new DOMS and hence will not be overloading the website, but just adding multiple styles onto one "< div >".
 I'll then add animations to make the the sky breathe.
+
+I realized in the process of making the desiarable animation for the stars that it is a lot more complicated than I have thought. In the process of trying to make the Star Wars Light Speed effect I have learned the JS Canvas. I also learned how to manage concepts such as depth perception and optical illusions. After some time, I managed to make a warp effect in JS, but then when I actually tried to implement it into the code I already have ... well, it didn't go quite so well. The problem is that the stars I have so far wouldn't go with canvas as I didn't create them there and the transition would be very not smooth and not natural.
+
+So, now I'll try a new idea: taking advantage of the nature of my stars. Since all my stars are just box shadows of a single object, if I move that object then the stars will move as well. 
+
