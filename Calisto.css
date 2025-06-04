@@ -1,21 +1,27 @@
-* {
+
+
+
+html {
     background-color:#111624  ;
     box-sizing: border-box;
+}
+
+.sky {
+    width: 100%;
+    height: 100%;
 }
 
 #bigBangButton {
     all: unset;
     cursor: pointer;
-    
-    width: 134px;
-    height: 151px;
+    transform: translate(-50%,-50%);
 
     position: absolute;
     top: 50%;
     left: 50%;
-    align-self: center;
     animation: pulse 5s infinite ease-in-out;
 }
+
 
   
 @keyframes pulse {
@@ -28,6 +34,11 @@
 }
 
 #CatIcon{
-    width: inherit;
-    height: inherit;
+    width: 80px;
+    height: 80px;
 }
+
+#CatIcon:hover {
+    transform: scale(1.1);
+}
+
