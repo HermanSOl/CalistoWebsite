@@ -1,138 +1,96 @@
-<<<<<<< HEAD
-
-
-
 html {
-    background-color:#111624  ;
-    box-sizing: border-box;
-}
-
-.sky {
-    width: 100%;
-    height: 100%;
-}
-=======
-html {
-    background-color:#111624;
+    background-color: #111624;
     height: 100%;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     overflow: hidden;
-}
-
->>>>>>> 024acfcf109bb45df5141fd30d39d745fe09eb59
-
-#bigBangButton {
+    box-sizing: border-box;
+  }
+  
+  .sky {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #bigBangButton {
     all: unset;
     cursor: pointer;
-<<<<<<< HEAD
-    transform: translate(-50%,-50%);
-
     position: absolute;
     top: 50%;
     left: 50%;
-=======
-
-    position: absolute;
-    top: 45%;
-    left: 47%;
->>>>>>> 024acfcf109bb45df5141fd30d39d745fe09eb59
+    transform: translate(-50%, -50%);
     animation: pulse 5s infinite ease-in-out;
-
-    & :hover {
-        scale: 1.05;
-    }
-}
-
-<<<<<<< HEAD
-
+  }
   
-=======
-#CatIcon {
+  #bigBangButton:hover {
+    scale: 1.05;
+  }
+  
+  #CatIcon {
     width: 100px;
     height: 100px;
-}
-
-#stars {
+  }
+  
+  #CatIcon:hover {
+    transform: scale(1.1);
+  }
+  
+  #stars {
     width: 1px;
     height: 1px;
-    background:transparent;
+    background: transparent;
     animation: glimmer 2.8s ease-in-out infinite;
-}
-
-#stars2 {
-
-    width:2px;
+  }
+  
+  #stars2 {
+    width: 2px;
     height: 2px;
     background: transparent;
-    
-    animation:glimmer 4.7s ease-in-out infinite 1.3s;
-    
-}
-
-#startText {
+    animation: glimmer 4.7s ease-in-out infinite 1.3s;
+  }
+  
+  #startText {
     display: none;
+    position: absolute;
     left: 39%;
     top: 55%;
-    position: absolute;
-
-    margin-top: 25px; 
+    margin-top: 25px;
     font-family: 'Orbitron', sans-serif;
     font-size: 40px;
-    font-weight: 5px;
     letter-spacing: 5px;
     perspective: 100px;
-}
-
-span {
+  }
+  
+  span {
     background: linear-gradient(to right, #ff6ec4, #7873f5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        1 1 2px #ff6ec4,
-        0 0 5px #7873f5,
-        0 0 2px #7873f5,
-        0 0 5px #ff6ec4;
-    
+      1px 1px 2px #ff6ec4,
+      0 0 5px #7873f5,
+      0 0 2px #7873f5,
+      0 0 5px #ff6ec4;
     transform: rotateX(10deg);
     display: inline-block;
     animation: flicker 5s infinite;
-}
-
-
-@keyframes glimmer {
-    0%{opacity: 0.8;}
-    50%{opacity: 0.2; scale: 1;}
-    100%{opacity: 0.8;}
-}
-
-
->>>>>>> 024acfcf109bb45df5141fd30d39d745fe09eb59
-@keyframes pulse {
-    0% {scale: 1;}
-    50%{scale: 1.15;}
-    100%{scale: 1;}
-}
-
-<<<<<<< HEAD
-#CatIcon{
-    width: 80px;
-    height: 80px;
-}
-
-#CatIcon:hover {
-    transform: scale(1.1);
-}
-=======
-@keyframes flicker {
+  }
+  
+  @keyframes pulse {
+    0% { scale: 1; }
+    50% { scale: 1.15; }
+    100% { scale: 1; }
+  }
+  
+  @keyframes glimmer {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.8; }
+  }
+  
+  @keyframes flicker {
     0%, 100% { opacity: 1; }
     45% { opacity: 0.6; }
     70% { opacity: 0.85; }
     85% { opacity: 0.4; }
-}
-
-
-/* can be used later! background: radial-gradient(ellipse at bottom, #ff6ec4 0%, #7873f5 40%, #1f1c2c 100%);
-background: radial-gradient(ellipse at bottom, #0f2027 0%, #203a43 50%, #2c5364 100%); */
-
->>>>>>> 024acfcf109bb45df5141fd30d39d745fe09eb59
-
+  }
+  
+  
