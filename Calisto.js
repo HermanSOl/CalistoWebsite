@@ -104,4 +104,7 @@ bigBangButton.addEventListener('click', () => {
     bigBangButton.disabled = true;
     expandGradient();
     clearOutStars();
+    setTimeout(() => {
+        document.getElementById('gradient-box').style.background = `linear-gradient(to bottom, #12152B 0%, #2A2E44 100%)`;
+    }, 5000)
 });
