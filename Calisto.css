@@ -55,7 +55,7 @@ html {
     height: 2px;
     border-radius: 5px;
     background: transparent;
-    animation: glimmer 10s ease-in-out infinite 1.3s;
+    animation: glimmer 9s ease-in-out infinite 1.3s;
   }
 
   #stars3 {
@@ -63,7 +63,7 @@ html {
     height: 4px;
     border-radius: 5px;
     background: transparent;
-    animation: glimmer 10s ease-in-out infinite 1.3s;
+    animation: glimmer 8s ease-in-out infinite 1.7s;
   }
 
   #stars4 {
@@ -71,7 +71,7 @@ html {
     height: 15px;
     border-radius: 10px;
     background: transparent;
-    animation: glimmer 10s ease-in-out infinite 1.3s;
+    animation: glimmer 10s ease-in-out infinite 1.9s;
   }
 
   
@@ -87,19 +87,7 @@ html {
     perspective: 100px;
   }
   
-  span {
-    background: linear-gradient(to right, #ff6ec4, #7873f5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow:
-      1px 1px 2px #ff6ec4,
-      0 0 5px #7873f5,
-      0 0 2px #7873f5,
-      0 0 5px #ff6ec4;
-    transform: rotateX(10deg);
-    display: inline-block;
-    animation: flicker 5s infinite;
-  }
+
 
   @keyframes melt {
     0% {
@@ -143,6 +131,10 @@ html {
     0% { opacity: 0.8; }
     50% { opacity: 0.2; }
     100% { opacity: 0.8; }
+  }
+
+  @keyframes fade-out{
+    100% {opacity: 0;}
   }
   
   @keyframes flicker {
