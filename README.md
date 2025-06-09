@@ -26,3 +26,6 @@ So, now I'll try a new idea: taking advantage of the nature of my stars. Since a
 ## Redesign
 After some careful consideration, I realized that making the stars and animation (although can work out) will not be as visually appealing as I have thought. Instead of that, I'll stick with the original "Big Bang" idea. 
 I'll make the entrance screen light themed and on the press of the button I will make an animation that will spread from the center to the full screen using color-gradients.
+
+After some experimenting, I figured out how to animate the gradient so that it expands from the middle toward the edges. The problem was that the background effect of css does not fall into animation characteristics, so it wasn't possible to just put the beggining state and the ending state and expect it to run smoothly and nicely without jumping.
+To add the smoothness, it was necessary to animate each percent of the animation from 0 to 100%. For that, a new function in js was created.

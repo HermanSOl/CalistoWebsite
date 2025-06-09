@@ -18,18 +18,22 @@ document.getElementById('stars4').style.boxShadow = giveStars(5);
 
 
 
-function moveStars() {
-    document.getElementById('stars').style.width = '25px';
-    document.getElementById('stars2').style.width = '25px';
-    document.getElementById('stars').style.height = '25px';
-    document.getElementById('stars2').style.height = '25px'
-    document.getElementById('stars').style.animation = 'melt 10s forwards 1';
-    document.getElementById('stars2').style.animation = 'melt 10s forwards 1';
-
+function expandGradient() {
+    const box = document.getElementById('gradient-box');
+    let stop = 1;
+    let interval = setInterval(() => {
+      if (stop > 100) {
+        clearInterval(interval);
+        return;
+      }
+      // Update background with dynamic stops
+      box.style.background = `radial-gradient(circle at center, black ${stop}%, white ${stop + 5}%)`;
+      stop++;
+    }, 50); // 30ms per update (~1s total)
 }
 
 const bigBangButton = document.querySelector('#bigBangButton');
 
 bigBangButton.addEventListener('click', () => {
-    moveStars();
+    expandGradient();
 });
