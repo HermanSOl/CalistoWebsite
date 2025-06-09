@@ -12,7 +12,7 @@ function giveStars(n, color) {
         const x = Math.floor(Math.random() * 2000);
         const y = Math.floor(Math.random() * 2000);
         shadows.push(`${x}px ${y}px ${color}`);
-        shadows.push(`${x + 0.4}px ${y + 0.8}px #F7717D`);
+        shadows.push(`${x + 0.7}px ${y + 1}px #F7717D`);
     }
     return shadows.join(',');                // need to return with , between each due to css syntax
 }
@@ -23,6 +23,21 @@ function initializeDarkStars() {
     stars2.style.boxShadow = giveStars(600, `black`);
     stars3.style.boxShadow = giveStars(300, `black`);
     stars4.style.boxShadow = giveStars(5,`black`);
+}
+
+// EFFECTS: sets the stars, white
+function initializeLightStars() {
+    stars.style.boxShadow = giveStars(900, `white`);
+    stars2.style.boxShadow = giveStars(600, `white`);
+    stars3.style.boxShadow = giveStars(300, `white`);
+    stars4.style.boxShadow = giveStars(5,`white`);
+    starsFadeIn();
+    setTimeout(() => {
+        stars.style.animation = "glimmer 3s infinite"
+        stars2.style.animation = "glimmer 3s infinite 1.5s"
+        stars3.style.animation = "glimmer 3s infinite 2.2s"
+        stars4.style.animation = "glimmer 3s infinite 4s"
+    },1500);
 }
 
 
@@ -41,11 +56,29 @@ function clearOutStars() {
         stars3.style.boxShadow = "none";
         stars4.style.boxShadow = "none";
         document.getElementById('CatIcon').src = "resources/096.svg";
+        bigBangButton.style.animation = "fade-in 2s forwards"
         bigBangButton.style.scale = 1.2;
-        bigBangButton.style.animation = "fade-in 3s forwards"
+        addStarsTransition();
     },3500) 
 
 }
+
+function starsFadeIn() {
+    stars.style.animation = "fade-in 3s forwards"
+    stars2.style.animation = "fade-in 3s forwards"
+    stars3.style.animation = "fade-in 3s forwards"
+    stars4.style.animation = "fade-in 3s forwards"
+}
+
+function addStarsTransition(){
+    setTimeout(() => {
+        bigBangButton.style.animation = "fade-out 3s forwards";
+        starsFadeIn();
+        setTimeout(initializeLightStars(), 2000);
+        
+    }, 1500);
+}
+
 function expandGradient() {
     const box = document.getElementById('gradient-box');
     let stop = 1;
