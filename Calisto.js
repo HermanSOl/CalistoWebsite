@@ -73,6 +73,9 @@ function starsFadeIn() {
 function addStarsTransition(){
     setTimeout(() => {
         bigBangButton.style.animation = "fade-out 3s forwards";
+        setTimeout(() => {
+            bigBangButton.style.display = "none";
+        },3000)
         starsFadeIn();
         setTimeout(initializeLightStars(), 2000);
         
@@ -98,6 +101,7 @@ initializeDarkStars();
 
 
 bigBangButton.addEventListener('click', () => {
+    bigBangButton.disabled = true;
     expandGradient();
     clearOutStars();
 });
