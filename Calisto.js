@@ -38,7 +38,7 @@ function clearOutStars() {
         stars2.style.boxShadow = [];
         stars3.style.boxShadow = [];
         stars4.style.boxShadow = [];
-    },10000)
+    },50000)
 
 }
 
