@@ -28,20 +28,24 @@ function initializeDarkStars() {
 
 // EFFECTS: gets rid of the box shadows, sets animation to fade-out
 function clearOutStars() {
-    stars.style.animation = "fade-out 5s forwards"
-    stars2.style.animation = "fade-out 5s forwards"
-    stars3.style.animation = "fade-out 5s forwards"
-    stars4.style.animation = "fade-out 5s forwards"
+    stars.style.animation = "fade-out 3s forwards"
+    stars2.style.animation = "fade-out 3s forwards"
+    stars3.style.animation = "fade-out 3s forwards"
+    stars4.style.animation = "fade-out 3s forwards"
+    bigBangButton.style.animation = "fade-out 3s forwards" // fade the button out
 
     setTimeout(() => {
-        stars.style.boxShadow = [];
-        stars2.style.boxShadow = [];
-        stars3.style.boxShadow = [];
-        stars4.style.boxShadow = [];
-    },50000)
+        console.log("This working?");
+        stars.style.boxShadow = "none";
+        stars2.style.boxShadow = "none";
+        stars3.style.boxShadow = "none";
+        stars4.style.boxShadow = "none";
+        document.getElementById('CatIcon').src = "resources/096.svg";
+        bigBangButton.style.scale = 1.2;
+        bigBangButton.style.animation = "fade-in 3s forwards"
+    },3500) 
 
 }
-
 function expandGradient() {
     const box = document.getElementById('gradient-box');
     let stop = 1;
@@ -54,6 +58,7 @@ function expandGradient() {
       stop++;
     }, 50); 
 }
+
 
 initializeDarkStars();
 
