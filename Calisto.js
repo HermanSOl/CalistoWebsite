@@ -33,10 +33,10 @@ function initializeLightStars() {
     stars4.style.boxShadow = giveStars(5,`white`);
     starsFadeIn();
     setTimeout(() => {
-        stars.style.animation = "glimmer 3s infinite"
-        stars2.style.animation = "glimmer 3s infinite 1.5s"
-        stars3.style.animation = "glimmer 3s infinite 2.2s"
-        stars4.style.animation = "glimmer 3s infinite 4s"
+        stars.style.animation = "animStar 40s infinite"
+        stars2.style.animation = "animStar 50s infinite 1.5s"
+        stars3.style.animation = "animStar 60s infinite 2.2s"
+        stars4.style.animation = "animStar 65s infinite 4s"
     },1500);
 }
 

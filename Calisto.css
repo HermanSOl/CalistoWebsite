@@ -148,5 +148,16 @@ html {
     70% { opacity: 0.85; }
     85% { opacity: 0.4; }
 }
+
+@keyframes animStar {
+    0% {	
+        transform: translateY(0px)
+    }
+    100%{
+        transform: translateY(-1500px)
+    }	
+}
+
   
+    
   
