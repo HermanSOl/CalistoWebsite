@@ -86,6 +86,151 @@ html {
     letter-spacing: 5px;
     perspective: 100px;
   }
+
+  /* -------------- CALISTO SECTION -------------------- */
+
+  .Calistosection{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 1700px;
+    border-radius: 10px;
+    margin: 20px auto 60px;
+    padding: 40px;
+    background-color: #1E2749;
+    box-shadow: 0 4px 10px #FC814A;
+  }
+
+  
+ .corner-cat {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 20%;
+  height: auto;
+  z-index: 2;
+ }
+
+  .container h2 {
+    font-size: 150px;
+    position: absolute;
+    font-family: "Kaushan Script", cursive;
+    top: -260px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    text-align: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .header-text p{
+      font-size: 70px;
+  }
+
+  .header-text {
+    flex: 1;
+    color: white;
+    position: relative;
+    z-index: 10;
+    padding-right: 30px;
+  }
+
+  .header-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .header-image {
+    flex-shrink: 0;
+    padding-bottom: 60px;
+    border-radius: 15px;
+    z-index: 15;
+  }
+
+  #CalistoText{
+      font-size: 200%;
+      z-index: 3;
+      font-family: "Outfit", sans-serif;
+  }
+
+  .cat-decor {
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  height: auto;
+  }
+
+  /* Top Left Cat (sitting on the border) */
+  .cat-top-left {
+  top: -80px;
+  left: 40px;
+  width: 300px;
+  }
+
+  /* Bottom Left Yawning Cat */
+  .cat-bottom-left {
+  bottom: 0;
+  left: 30px;
+  width: 500px;
+  }
+
+  .header-image img {
+    height: 500px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .container h2 {
+      font-size: 60px;
+      top: -50px;
+    }
+
+    .cat-bottom-left{
+      display: none;
+    }
+
+    .corner-cat{
+      display: none;
+    }
+
+    .container {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header-text {
+      padding-right: 0;
+    }
+
+    .header-image {
+      justify-self: center;
+      margin-bottom: 2px;
+      padding: 20px;
+    }
+
+    #CalistoText {
+      font-size: 100%;
+    }
+
+    .header-image img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
   
 
 
