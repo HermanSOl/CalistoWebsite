@@ -1,5 +1,8 @@
 const bigBangButton = document.querySelector('#bigBangButton');
 const CalistoSection = document.getElementById('Calistosection');
+const CalistoPortret = document.getElementById('CalistoPortret');
+const CalistoAccessories = document.getElementById('accessoriesCalisto');
+const CalistoText = document.getElementById('header-text');
 const stars = document.getElementById('stars');
 const stars2 = document.getElementById('stars2');
 const stars3 = document.getElementById('stars3');
@@ -17,7 +20,7 @@ function giveStars(n, color) {
     }
     return shadows.join(',');                // need to return with , between each due to css syntax
 }
-
+ 
 // EFFECTS: sets the stars, black
 function initializeDarkStars() {
     stars.style.boxShadow = giveStars(900, `black`);
@@ -108,7 +111,9 @@ bigBangButton.addEventListener('click', () => {
     setTimeout(() => {
         document.getElementById('gradient-box').style.background = `linear-gradient(to bottom, #12152B 0%, #2A2E44 100%)`;
         CalistoSection.style.display = "flex";
-        CalistoSection.style.animation = "fadein-from-bottom 2s forwards"
-    }, 7500)
+        CalistoPortret.style.animation = "fadein-from-right 1.6s forwards";
+        CalistoSection.style.animation = "fadein-from-bottom 1.3s forwards";
+
+    }, 9000)
     
 });

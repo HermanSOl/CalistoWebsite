@@ -94,7 +94,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 25px;
   }
 
   .container {
@@ -103,8 +103,8 @@ html {
     position: relative;
     flex-wrap: wrap;
     align-items: stretch;
-    max-width: 1700px;
-    border-radius: 10px;
+    max-width: 1600px;
+    border-radius: 30px;
     margin: 20px auto 60px;
     background-color: rgba(30, 39, 73, 1);
     background: linear-gradient(to right,#1E2749 50%,  #12152B);
@@ -117,16 +117,16 @@ html {
   position: absolute;
   bottom: 1px;
   left: 50%;
-  width: 20%;
+  width: 15%;
   height: auto;
   z-index: 2;
  }
 
   .container h2 {
-    font-size: 150px;
+    font-size: 130px;
     position: absolute;
     font-family: "Kaushan Script", cursive;
-    top: -260px;
+    top: -240px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -155,7 +155,7 @@ html {
 
   .header-image {
     flex-shrink: 0;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     border-radius: 15px;
     z-index: 15;
   }
@@ -188,7 +188,7 @@ html {
   }
 
   .header-image img {
-    height: 500px;
+    height: 430px;
     display: block;
   }
 
@@ -242,6 +242,28 @@ html {
     }
     100%{
         transform: translateY(0px);
+        opacity: 1;
+    }
+  }
+
+  @keyframes fadein-from-left {
+    0%{
+        transform: translateX(-700px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+  }
+
+  @keyframes fadein-from-right{
+    0%{
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
         opacity: 1;
     }
   }
@@ -316,6 +338,14 @@ html {
     }	
 }
 
-  
+@keyframes flash {
+    0%, 100% { color: #fff; }
+    50% { color: #FC814A; }
+  }
+
+.flash {
+    animation: flash 3s infinite;
+    font-weight: bold;
+  }
     
   
