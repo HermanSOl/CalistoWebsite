@@ -89,7 +89,7 @@ html {
 
   /* -------------- CALISTO SECTION -------------------- */
 
-  .Calistosection{
+  #Calistosection{
     display: none;
     flex-direction: column;
     align-items: center;
@@ -106,8 +106,9 @@ html {
     max-width: 1700px;
     border-radius: 10px;
     margin: 20px auto 60px;
+    background-color: rgba(30, 39, 73, 1);
+    background: linear-gradient(to right,#1E2749 50%,  #12152B);
     padding: 40px;
-    background-color: #1E2749;
     box-shadow: 0 4px 10px #FC814A;
   }
 
@@ -232,6 +233,18 @@ html {
   }
 
   
+  /* ANIMATIONS */
+
+  @keyframes fadein-from-bottom {
+    0%{
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+  }
 
 
   @keyframes melt {

@@ -1,4 +1,5 @@
 const bigBangButton = document.querySelector('#bigBangButton');
+const CalistoSection = document.getElementById('Calistosection');
 const stars = document.getElementById('stars');
 const stars2 = document.getElementById('stars2');
 const stars3 = document.getElementById('stars3');
@@ -106,5 +107,8 @@ bigBangButton.addEventListener('click', () => {
     clearOutStars();
     setTimeout(() => {
         document.getElementById('gradient-box').style.background = `linear-gradient(to bottom, #12152B 0%, #2A2E44 100%)`;
-    }, 5000)
+        CalistoSection.style.display = "flex";
+        CalistoSection.style.animation = "fadein-from-bottom 2s forwards"
+    }, 7500)
+    
 });
