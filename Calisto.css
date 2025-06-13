@@ -99,7 +99,34 @@ html {
   }
 
   #DionisSection{
-    display: none;
+    display: flex;
+  }
+
+  #DionisTitle{
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    top: -50px;
+    font-size: 80px;
+  }
+
+  
+  .dionis-top-left {
+    top: -90px;
+    left: 100px;
+    width: 350px;
+  }
+  
+  .dionis-bottom-center {
+    bottom: -1px;
+    left: 60%;
+    transform: translateX(-60%);
+    width: 400px;
+  }
+  
+  .dionis-top-right {
+    bottom: 50px;
+    right: 40px;
+    width: 600px;
   }
 
   .container {
@@ -181,7 +208,6 @@ html {
   .cat-decor {
   position: absolute;
   z-index: 1;
-  width: 120px;
   height: auto;
   }
 
@@ -212,6 +238,10 @@ html {
 
     .cat-bottom-left{
       display: none;
+    }
+
+    #DionisTitle{
+        font-size: 80px;
     }
 
     .corner-cat{
