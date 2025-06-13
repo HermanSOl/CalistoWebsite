@@ -99,7 +99,18 @@ html {
   }
 
   #DionisSection{
-    display: flex;
+    display: none;
+  }
+
+  #DionisSection{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease-out;
+  }
+
+  #DionisSection.show{
+    opacity: 1;
+    transform: translateY(0);
   }
 
   #DionisTitle{
@@ -238,6 +249,13 @@ html {
 
     .cat-bottom-left{
       display: none;
+    }
+
+    .dionis-top-right{
+        display: none;
+    }
+    .dionis-bottom-center{
+        display: none;
     }
 
     #DionisTitle{

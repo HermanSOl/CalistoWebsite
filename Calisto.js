@@ -129,6 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (entry.isIntersecting) {
           carousel.classList.add('show');
         }
+        if (entry.target === DionisSection && entry.isIntersecting) {
+            DionisSection.classList.add('show');
+        }
       });
     }, {
       threshold: 0.2
@@ -137,4 +140,5 @@ document.addEventListener("DOMContentLoaded", function () {
     if (carousel) {
       observer.observe(carousel);
     }
+    if (DionisSection) observer.observe(DionisSection);
   });
