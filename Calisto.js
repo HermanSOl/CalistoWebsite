@@ -3,6 +3,7 @@ const CalistoSection = document.getElementById('Calistosection');
 const CalistoPortret = document.getElementById('CalistoPortret');
 const CalistoAccessories = document.getElementById('accessoriesCalisto');
 const CalistoText = document.getElementById('header-text');
+const carousel = document.querySelector('.carousel-container');
 const stars = document.getElementById('stars');
 const stars2 = document.getElementById('stars2');
 const stars3 = document.getElementById('stars3');
@@ -113,7 +114,25 @@ bigBangButton.addEventListener('click', () => {
         CalistoSection.style.display = "flex";
         CalistoPortret.style.animation = "fadein-from-right 1.6s forwards";
         CalistoSection.style.animation = "fadein-from-bottom 1.3s forwards";
-
+        carousel.style.display = "flex";
     }, 9000)
     
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          carousel.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    if (carousel) {
+      observer.observe(carousel);
+    }
+  });

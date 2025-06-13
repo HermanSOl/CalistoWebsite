@@ -271,13 +271,7 @@ html {
   *:after{
       box-sizing: border-box;
   }
-  html,
-  body{
-      min-height: 100%;
-  }
-  body{
-      background-image: radial-gradient(mintcream 0%, lightgray 100%);
-  }
+
   h1{
       display: table;
       margin: 5% auto 0;
@@ -288,6 +282,9 @@ html {
       text-shadow: 0 1px white, 0 2px black;
   }
   .carousel-container{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease-out;
     display: none;
     justify-content: center;
     align-items:center;
@@ -297,6 +294,11 @@ html {
     height: 280px;
     position: relative;
     perspective: 1000px;
+  }
+
+  .carousel-container.show{
+    opacity: 1;
+    transform: translateY(0);
   }
   #carousel{
       width: 100%;
