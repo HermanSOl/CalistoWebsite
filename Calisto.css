@@ -238,18 +238,15 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateZ(0px); /* 👈 Put it in the center */
-    transform: translateY(-50px);
-    width: 210px;
-    height: 140px;
+    transform: translateZ(0px); 
+    transform: translateY(-200px);
+    width: 420px;
+    height: 280px;
     margin: auto;
     right: 0;
-    bottom: 0;
     z-index: 2;
-    background-color: white;
-    border: 4px solid #000;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    pointer-events: none; /* Avoid blocking hover on carousel images */
+    pointer-events: none; 
   }
   
   .centerpiece img {
@@ -288,11 +285,15 @@ html {
       text-shadow: 0 1px white, 0 2px black;
   }
   .carousel-container{
-      margin: 4% auto;
-      width: 210px;
-      height: 140px;
-      position: relative;
-      perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    margin: 350px auto 100px auto;
+    width: 420px;
+    height: 280px;
+    position: relative;
+    perspective: 1000px;
   }
   #carousel{
       width: 100%;
@@ -307,24 +308,24 @@ html {
   #carousel figure{
       display: block;
       position: absolute;
-      width: 186px;
-      height: 116px;
-      left: 10px;
-      top: 10px;
+      width: 280px;
+      height: 140px;
+      left: 24px;
+      top: 24px;
       background: black;
       overflow: hidden;
       border: solid 5px black;
   }
 
-  #carousel figure:nth-child(2) { transform: rotateY(0deg) translateZ(288px); }
-  #carousel figure:nth-child(3) { transform: rotateY(40deg) translateZ(288px); }
-  #carousel figure:nth-child(4) { transform: rotateY(80deg) translateZ(288px); }
-  #carousel figure:nth-child(5) { transform: rotateY(120deg) translateZ(288px); }
-  #carousel figure:nth-child(6) { transform: rotateY(160deg) translateZ(288px); }
-  #carousel figure:nth-child(7) { transform: rotateY(200deg) translateZ(288px); }
-  #carousel figure:nth-child(8) { transform: rotateY(240deg) translateZ(288px); }
-  #carousel figure:nth-child(9) { transform: rotateY(280deg) translateZ(288px); }
-  #carousel figure:nth-child(10) { transform: rotateY(320deg) translateZ(288px);}
+  #carousel figure:nth-child(2) { transform: rotateY(0deg) translateZ(500px); }
+  #carousel figure:nth-child(3) { transform: rotateY(40deg) translateZ(500px); }
+  #carousel figure:nth-child(4) { transform: rotateY(80deg) translateZ(500px); }
+  #carousel figure:nth-child(5) { transform: rotateY(120deg) translateZ(500px); }
+  #carousel figure:nth-child(6) { transform: rotateY(160deg) translateZ(500px); }
+  #carousel figure:nth-child(7) { transform: rotateY(200deg) translateZ(500px); }
+  #carousel figure:nth-child(8) { transform: rotateY(240deg) translateZ(500px); }
+  #carousel figure:nth-child(9) { transform: rotateY(280deg) translateZ(500px); }
+  #carousel figure:nth-child(10) { transform: rotateY(320deg) translateZ(500px);}
 
   
   /* ANIMATIONS */
@@ -437,7 +438,7 @@ html {
         transform: translateY(0px)
     }
     100%{
-        transform: translateY(-1500px)
+        transform: translateY(-1000px)
     }	
 }
 
