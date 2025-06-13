@@ -1,7 +1,8 @@
+// ==== ELEMENT SELECTORS ====
 const bigBangButton = document.querySelector('#bigBangButton');
+const catIcon = document.getElementById('CatIcon');
 const CalistoSection = document.getElementById('Calistosection');
 const CalistoPortret = document.getElementById('CalistoPortret');
-const CalistoAccessories = document.getElementById('accessoriesCalisto');
 const CalistoText = document.getElementById('header-text');
 const carousel = document.querySelector('.carousel-container');
 const DionisSection = document.getElementById('DionisSection');
@@ -9,136 +10,117 @@ const stars = document.getElementById('stars');
 const stars2 = document.getElementById('stars2');
 const stars3 = document.getElementById('stars3');
 const stars4 = document.getElementById('stars4');
+const gradientBox = document.getElementById('gradient-box');
 
-// REQUORES: a number of stars produced n
-// EFFECTS: returns an array of shadow-boxes at random possitions
+// ==== STAR LOGIC ====
 function giveStars(n, color) {
-    let shadows = [];
-    for (let i = 0; i < n; i++) {
-        const x = Math.floor(Math.random() * 2000);
-        const y = Math.floor(Math.random() * 2000);
-        shadows.push(`${x}px ${y}px ${color}`);
-        shadows.push(`${x + 0.7}px ${y + 1}px #F7717D`);
-    }
-    return shadows.join(',');                // need to return with , between each due to css syntax
+  const shadows = [];
+  for (let i = 0; i < n; i++) {
+    const x = Math.floor(Math.random() * 2000);
+    const y = Math.floor(Math.random() * 2000);
+    shadows.push(`${x}px ${y}px ${color}`);
+    shadows.push(`${x + 0.7}px ${y + 1}px #F7717D`);
+  }
+  return shadows.join(',');
 }
- 
-// EFFECTS: sets the stars, black
+
+function setStars(color) {
+  stars.style.boxShadow = giveStars(900, color);
+  stars2.style.boxShadow = giveStars(600, color);
+  stars3.style.boxShadow = giveStars(300, color);
+  stars4.style.boxShadow = giveStars(5, color);
+}
+
 function initializeDarkStars() {
-    stars.style.boxShadow = giveStars(900, `black`);
-    stars2.style.boxShadow = giveStars(600, `black`);
-    stars3.style.boxShadow = giveStars(300, `black`);
-    stars4.style.boxShadow = giveStars(5,`black`);
+  setStars('black');
 }
 
-// EFFECTS: sets the stars, white
 function initializeLightStars() {
-    stars.style.boxShadow = giveStars(900, `white`);
-    stars2.style.boxShadow = giveStars(600, `white`);
-    stars3.style.boxShadow = giveStars(300, `white`);
-    stars4.style.boxShadow = giveStars(5,`white`);
-    starsFadeIn();
-    setTimeout(() => {
-        stars.style.animation = "animStar 40s infinite"
-        stars2.style.animation = "animStar 50s infinite 1.5s"
-        stars3.style.animation = "animStar 60s infinite 2.2s"
-        stars4.style.animation = "animStar 65s infinite 4s"
-    },1500);
+  setStars('white');
+  fadeInStars();
+
+  setTimeout(() => {
+    stars.style.animation = "animStar 40s infinite";
+    stars2.style.animation = "animStar 50s infinite 1.5s";
+    stars3.style.animation = "animStar 60s infinite 2.2s";
+    stars4.style.animation = "animStar 65s infinite 4s";
+  }, 1500);
 }
 
+function fadeOutStars() {
+  const fadeStyle = "fade-out 3s forwards";
+  [stars, stars2, stars3, stars4, bigBangButton].forEach(el => el.style.animation = fadeStyle);
+}
 
-// EFFECTS: gets rid of the box shadows, sets animation to fade-out
+function fadeInStars() {
+  const fadeIn = "fade-in 3s forwards";
+  [stars, stars2, stars3, stars4].forEach(el => el.style.animation = fadeIn);
+}
+
 function clearOutStars() {
-    stars.style.animation = "fade-out 3s forwards"
-    stars2.style.animation = "fade-out 3s forwards"
-    stars3.style.animation = "fade-out 3s forwards"
-    stars4.style.animation = "fade-out 3s forwards"
-    bigBangButton.style.animation = "fade-out 3s forwards" // fade the button out
+  fadeOutStars();
 
-    setTimeout(() => {
-        console.log("This working?");
-        stars.style.boxShadow = "none";
-        stars2.style.boxShadow = "none";
-        stars3.style.boxShadow = "none";
-        stars4.style.boxShadow = "none";
-        document.getElementById('CatIcon').src = "resources/096.svg";
-        bigBangButton.style.animation = "fade-in 2s forwards"
-        bigBangButton.style.scale = 1.2;
-        addStarsTransition();
-    },3500) 
-
+  setTimeout(() => {
+    [stars, stars2, stars3, stars4].forEach(el => el.style.boxShadow = "none");
+    catIcon.src = "resources/096.svg";
+    bigBangButton.style.animation = "fade-in 2s forwards";
+    bigBangButton.style.scale = 1.2;
+    addStarsTransition();
+  }, 3500);
 }
 
-function starsFadeIn() {
-    stars.style.animation = "fade-in 3s forwards"
-    stars2.style.animation = "fade-in 3s forwards"
-    stars3.style.animation = "fade-in 3s forwards"
-    stars4.style.animation = "fade-in 3s forwards"
-}
-
-function addStarsTransition(){
-    setTimeout(() => {
-        bigBangButton.style.animation = "fade-out 3s forwards";
-        setTimeout(() => {
-            bigBangButton.style.display = "none";
-        },3000)
-        starsFadeIn();
-        setTimeout(initializeLightStars(), 2000);
-        
-    }, 1500);
+function addStarsTransition() {
+  setTimeout(() => {
+    bigBangButton.style.animation = "fade-out 3s forwards";
+    setTimeout(() => bigBangButton.style.display = "none", 3000);
+    fadeInStars();
+    setTimeout(initializeLightStars, 2000);
+  }, 1500);
 }
 
 function expandGradient() {
-    const box = document.getElementById('gradient-box');
-    let stop = 1;
-    let interval = setInterval(() => {
-      if (stop > 100) {
-        clearInterval(interval);
-        return;
-      }
-      box.style.background = `radial-gradient(circle at center, #12152B ${stop}%, white ${stop + 5}%)`;
-      stop++;
-    }, 50); 
+  let stop = 1;
+  const interval = setInterval(() => {
+    if (stop > 100) {
+      clearInterval(interval);
+      return;
+    }
+    gradientBox.style.background = `radial-gradient(circle at center, #12152B ${stop}%, white ${stop + 5}%)`;
+    stop++;
+  }, 50);
 }
 
-
+// ==== MAIN LOGIC ====
 initializeDarkStars();
 
-
-
 bigBangButton.addEventListener('click', () => {
-    bigBangButton.disabled = true;
-    expandGradient();
-    clearOutStars();
-    setTimeout(() => {
-        document.getElementById('gradient-box').style.background = `linear-gradient(to bottom, #12152B 0%, #2A2E44 100%)`;
-        CalistoSection.style.display = "flex";
-        CalistoPortret.style.animation = "fadein-from-right 1.6s forwards";
-        CalistoSection.style.animation = "fadein-from-bottom 1.3s forwards";
-        carousel.style.display = "flex";
-        DionisSection.style.display = "flex";
-    }, 7500)
-    
+  bigBangButton.disabled = true;
+  expandGradient();
+  clearOutStars();
+
+  setTimeout(() => {
+    gradientBox.style.background = `linear-gradient(to bottom, #12152B 0%, #2A2E44 100%)`;
+    CalistoSection.style.display = "flex";
+    CalistoSection.style.animation = "fadein-from-bottom 1.3s forwards";
+    CalistoPortret.style.animation = "fadein-from-right 1.6s forwards";
+    carousel.style.display = "flex";
+    DionisSection.style.display = "flex";
+  }, 7500);
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          carousel.classList.add('show');
-        }
-        if (entry.target === DionisSection && entry.isIntersecting) {
-            DionisSection.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.2
+// ==== OBSERVER ====
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.target === carousel && entry.isIntersecting) {
+        carousel.classList.add('show');
+      }
+      if (entry.target === DionisSection && entry.isIntersecting) {
+        DionisSection.classList.add('show');
+      }
     });
+  }, { threshold: 0.2 });
 
-    if (carousel) {
-      observer.observe(carousel);
-    }
-    if (DionisSection) observer.observe(DionisSection);
-  });
+  if (carousel) observer.observe(carousel);
+  if (DionisSection) observer.observe(DionisSection);
+});
