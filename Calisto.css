@@ -87,15 +87,19 @@ html {
     perspective: 100px;
   }
 
-  /* -------------- CALISTO SECTION -------------------- */
+  /* -------------- CAT SECTION -------------------- */
 
-  #Calistosection{
+  .CatSection{
     margin-top: 3%;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 25px;
+  }
+
+  #DionisSection{
+    display: none;
   }
 
   .container {
@@ -161,10 +165,17 @@ html {
     z-index: 15;
   }
 
-  #CalistoText{
-      font-size: 200%;
+  #CharacterText{
+      font-size: 180%;
       z-index: 3;
       font-family: "Outfit", sans-serif;
+  }
+
+  #DionisText{
+    font-size: 200%;
+    z-index: 3;
+    font-weight: 400;
+    font-family: "Ubuntu", sans-serif;
   }
 
   .cat-decor {
@@ -183,7 +194,7 @@ html {
 
   /* Bottom Left Yawning Cat */
   .cat-bottom-left {
-  bottom: 0;
+  bottom: -20px;
   left: 30px;
   width: 500px;
   }
@@ -223,9 +234,10 @@ html {
       padding: 20px;
     }
 
-    #CalistoText {
+    #CharacterText {
       font-size: 100%;
     }
+
 
     .header-image img {
       height: auto;
@@ -289,7 +301,7 @@ html {
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    margin: 300px auto 100px auto;
+    margin: 300px auto 0px auto;
     width: 420px;
     height: 280px;
     position: relative;
